@@ -3,12 +3,32 @@ import numpy as np
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 #App Initialization
 app = FastAPI(
     title="ESP Failure Analytics Project ",
     description="An API to assess ESP health, detecting clear faults and incipient degradation.",
     version="1.0.0"
+)
+
+#ADD CORS MIDDLEWARE
+#This section tells the API to accept requests from browsers.
+origins = [
+    "http://localhost",
+    "http://localhost:5500", #For VS Code Live Server
+    "http://127.0.0.1",
+    "http://127.0.0.1:5500", #For VS Code Live Server
+    "null"  #To allow opening the index.html file directly
+    #In the future, add the deployed frontend URL here.
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"], #Allows all methods (GET, POST, etc.)
+    allow_headers=["*"], #Allows all headers
 )
 
 #1. Loading Model and Encoder on Startup

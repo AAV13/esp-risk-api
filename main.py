@@ -6,7 +6,7 @@ import os
 
 #App Initialization
 app = FastAPI(
-    title="ESP Health Monitoring System API",
+    title="ESP Failure Analytics Project ",
     description="An API to assess ESP health, detecting clear faults and incipient degradation.",
     version="1.0.0"
 )

@@ -6,7 +6,7 @@ import os
 
 #App Initialization
 app = FastAPI(
-    title="ESP Health Monitoring System API",
+    title="ESP Failure Analytics Project ",
     description="An API to assess ESP health, detecting clear faults and incipient degradation.",
     version="1.0.0"
 )
@@ -50,7 +50,7 @@ def get_risk_assessment(data: np.ndarray, model, encoder):
 
     #Level 2: YELLOW ALERT (Incipient Fault / Degradation)
     if prob_per_class['Normal'] < 0.90:
-        developing_fault = max((l, p) for l, p in prob_per_class.items() if l != 'Normal')[0]
+        developing_fault = max(((l, p) for l, p in prob_per_class.items() if l != 'Normal'), key=lambda item: item[1])[0]
         return {
             "alert_level": "YELLOW ALERT: INCIPIENT FAULT WARNING",
             "action": "Flag for expert review. Potential for future failure.",

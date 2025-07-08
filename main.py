@@ -3,6 +3,7 @@ import numpy as np
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import os
+import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
 
 #App Initialization
@@ -59,7 +60,7 @@ class ESPData(BaseModel):
     features: list[float]
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "features": [-1.0, 0.2, 0.3, 0.1, 0.8, 0.4, 0.3]
             }
@@ -95,16 +96,30 @@ def get_risk_assessment(data: np.ndarray, model, encoder):
                 "probabilities": prob_per_class
             }
 
+    top_fault_label, top_fault_prob = max(
+        ((label, prob) for label, prob in prob_per_class.items() if label != 'Normal'),
+        key=lambda item: item[1]
+    )
+
     # --- Tier 2: YELLOW ALERT (Incipient Fault or Feature Drift) ---
-    if prob_per_class['Normal'] < 0.90 or len(drift_flags) > 0:
+    if top_fault_prob > 0.07 or len(drift_flags) > 0:
+        reason_parts = []
+        # Add reason for the developing fault if it's above the 7% threshold
+        if top_fault_prob > 0.07:
+            reason_parts.append(f"A potential '{top_fault_label}' fault is developing with {top_fault_prob:.1%} probability.")
+        # Add reason for any detected feature drift
+        if len(drift_flags) > 0:
+            reason_parts.append(f"Feature drift detected in: {', '.join(drift_flags)}.")
+
+        '''if prob_per_class['Normal'] < 0.90 or len(drift_flags) > 0:
         developing_fault = max(((l, p) for l, p in prob_per_class.items() if l != 'Normal'), key=lambda item: item[1])[0]
         
         reason_parts = []
         if prob_per_class['Normal'] < 0.90:
             reason_parts.append(f"Model predicts 'Normal' operation, but confidence is low. Possible developing fault: '{developing_fault}'.")
         if len(drift_flags) > 0:
-            reason_parts.append(f"Feature drift detected in: {', '.join(drift_flags)}.")
-            
+            reason_parts.append(f"Feature drift detected in: {', '.join(drift_flags)}.")'''
+                
         return {
             "alert_level": "YELLOW ALERT: INCIPIENT FAULT WARNING",
             "action": "Flag for expert review. Potential for future failure.",
@@ -135,3 +150,7 @@ def predict_maintenance_alert(esp_data: ESPData):
     data_to_predict = np.array(esp_data.features).reshape(1, -1)
     alert = get_risk_assessment(data_to_predict, model, label_encoder)
     return alert
+
+'''#To run in local computer:
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)'''

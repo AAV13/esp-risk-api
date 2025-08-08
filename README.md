@@ -16,14 +16,9 @@ A predictive maintenance tool to assess the health of offshore Electric Submersi
 
 ## 📊 Dashboard Preview
 
-The interactive dashboard provides an intuitive interface for real-time risk assessment. Users can input sensor feature values and immediately receive a color-coded health status and recommended actions.
+The interactive dashboard provides an intuitive interface for real-time risk assessment. Users can input sensor feature values and immediately receive a color-coded health status, analysis, and recommended actions.
 
-<img width="960" alt="streamlit_output2" src="https://github.com/user-attachments/assets/14a37891-72dd-4cec-8d34-6aa482c734ab" />
-
-Alternate Dashboard using JavaScript:
-
-<img width="470" alt="other alternate output" src="https://github.com/user-attachments/assets/3649c981-8abb-4bd9-a80b-359163974546" />
-
+<img width="948" height="458" alt="image" src="https://github.com/user-attachments/assets/b365bedd-47ef-43f7-8ea8-b6631cfa36c0" />
 
 ---
 

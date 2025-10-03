@@ -28,6 +28,10 @@ The interactive dashboard provides an intuitive interface for real-time risk ass
 
 ---
 
+<img width="1489" height="765" alt="image" src="https://github.com/user-attachments/assets/8aec3d1a-2f14-4dbc-aff9-b0f3a713ec77" />
+
+This is a proof of concept of a logical improvement for the project which uses a stream of real time data and takes into consideration the compounding effect of every high stress event on the ESP, and the simulation of the reduction in RUL accordingly.
+
 ## 🛠️ Technologies Used
 
 -   **Backend:** FastAPI, Uvicorn

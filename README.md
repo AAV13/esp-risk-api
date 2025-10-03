@@ -33,22 +33,7 @@ The interactive dashboard provides an intuitive interface for real-time risk ass
 This is a proof of concept of a logical improvement for the project which uses a stream of real time data and takes into consideration the compounding effect of every high stress event on the ESP, and the simulation of the reduction in RUL accordingly.
 
 OUTPUT:
-
---- RUL Simulation ---
-
-Starting simulation with a tool life of 250 minutes.
-------------------------------------------------------------
-Cycle 848: PREDICTED FAILURE! RUL is exhausted.
-
---- Simulation Complete ---
-
-Final RUL: 0.00 minutes
-
-Total Anomalies Detected: 52
-
-Total Life Reduction (Penalty): 252.99 minutes
-
-This is equivalent to the failure date being brought closer by ~0.18 days.
+<pre> ```text --- rul simulation --- starting simulation with a tool life of 250 minutes. ------------------------------------------------------------ cycle 848: predicted failure! rul is exhausted. --- simulation complete --- final rul: 0.00 minutes total anomalies detected: 52 total life reduction (penalty): 252.99 minutes this is equivalent to the failure date being brought closer by ~0.18 days. ``` </pre>
 
 (This is a functionality that can be added to the above dashboard in the future when a realiable real time dataset is available)
 

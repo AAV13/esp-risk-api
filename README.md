@@ -33,7 +33,7 @@ The interactive dashboard provides an intuitive interface for real-time risk ass
 This is a proof of concept of a logical improvement for the project which uses a stream of real time data and takes into consideration the compounding effect of every high stress event on the ESP, and the simulation of the reduction in RUL accordingly.
 
 OUTPUT:
-<pre> ```text --- RUL Simulation ---
+<pre> ```--- RUL Simulation ---
 Starting simulation with a tool life of 250 minutes.
 ------------------------------------------------------------
 Cycle 848: PREDICTED FAILURE! RUL is exhausted.

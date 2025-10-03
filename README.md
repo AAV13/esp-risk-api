@@ -20,10 +20,6 @@ This tool is designed to provide a direct competitive advantage for investors, i
 
 Forecast Project Delays & Save Billions: Provides an early warning for rising negative community sentiment, a leading indicator for protests that can delay or derail multi-billion dollar capital projects (e.g., pipelines, LNG terminals). Averting a 6-month delay on a major project can preserve hundreds of millions in Net Present Value (NPV).
 
-Anticipate Regulatory Fines: The model is trained to detect precursor events (e.g., reports of spills, safety violations) that often lead to major regulatory actions from bodies like the EPA. This provides a crucial lead time to hedge against potential liabilities that can exceed $10 billion for a single incident.
-
-Optimize Insurance & Capital Costs: A lower, verifiable ESG risk score can be used as leverage to negotiate more favorable terms for insurance premiums and debt financing, directly improving a company's operating margin. This tool provides the real-time data to prove that risk profile is improving.
-
 ## 📊 Dashboard Preview
 
 The interactive dashboard provides an intuitive interface for real-time risk assessment. Users can input sensor feature values and immediately receive a color-coded health status, analysis, and recommended actions.

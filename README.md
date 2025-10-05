@@ -18,7 +18,9 @@ A predictive maintenance tool to assess the health of offshore Electric Submersi
 
 This tool is designed to provide a direct competitive advantage for investors, insurers, and operators in the Oil & Gas sector.
 
-Forecast Project Delays & Save Billions: Provides an early warning for rising negative community sentiment, a leading indicator for protests that can delay or derail multi-billion dollar capital projects (e.g., pipelines, LNG terminals). Averting a 6-month delay on a major project can preserve hundreds of millions in Net Present Value (NPV).
+Forecast Project Delays & Save Millions:  
+Predictive maintenance minimizes downtime, improves asset reliability, and extends equipment lifespan.  
+This system enables operators to **anticipate ESP failures**, optimize maintenance scheduling, and **reduce unplanned downtime by up to 20–30%**, potentially saving millions in deferred production losses.
 
 ## 📊 Dashboard Preview
 

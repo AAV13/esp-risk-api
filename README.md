@@ -1,6 +1,6 @@
 # ESP Failure Analytics & Predictive Maintenance Dashboard
 
-A predictive maintenance tool to assess the health of offshore Electric Submersible Pumps (ESPs). This project uses a hybrid machine learning and rule-based system to detect both clear faults and subtle signs of degradation, providing a real-time risk assessment through an interactive web dashboard and a REST API.
+A predictive maintenance tool to assess the health of offshore Electric Submersible Pumps (ESPs). This project uses a hybrid machine learning and rule-based system to detect both clear faults and subtle signs of degradation, providing a risk assessment through an interactive web dashboard and a REST API.
 
 ---
 
